@@ -11,3 +11,12 @@ print(avg)
 *trail, current = [6,4,98,77,6,4,3,45,7]
 print(trail)
 print(current)
+
+records = [
+    ('foo', 1, 2),
+    ('bar', 'whiskey'),
+    ('beer', 3, 54)
+]
+
+for tag, *tail in records:
+    print(tag)
