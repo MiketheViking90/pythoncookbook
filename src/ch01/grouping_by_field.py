@@ -13,10 +13,13 @@ rows = [
     {'address': '1039 W GRANVILLE', 'date': '07/04/2012'},
 ]
 
-def index_by_field(data):
-    rows.sort(key=itemgetter('date'))
-    groups = groupby(rows, key=itemgetter('date'))
+def index_by_field(data, field):
+    rows.sort(key=itemgetter(field))
+    groups = groupby(rows, key=itemgetter(field))
     return {k: list(iter) for k, iter in groups}
 
-date_index = index_by_field(rows)
+date_index = index_by_field(rows, 'date')
 pprint(dict(date_index))
+
+address_index = index_by_field(rows, 'address')
+pprint(dict(address_index))
