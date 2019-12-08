@@ -1,4 +1,5 @@
 import math
+from itertools import compress
 
 mylist = [1, 4, -5, 10, -7, 2, 3, -1]
 
@@ -20,3 +21,8 @@ print(negs_custom)
 
 clip_neg = negs = [n if n < 0 else 0 for n in mylist]
 print(clip_neg)
+
+mask = [True, True, False]
+nums = [1,2,3,4,5]
+
+print(list(compress(nums, mask)))
